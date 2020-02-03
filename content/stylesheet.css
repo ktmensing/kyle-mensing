@@ -118,3 +118,21 @@ p {
   bottom: 0;
   right: 3vw;
 }
+
+.site-navigation ul,
+.comic-navigation ol{
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.site-navigation li,
+.comic-navigation li{
+  list-style: none;
+  display: inline-block;
+}
+
+.site-navigation li a,
+.comic-navigation li a{
+  display: block;
+}
