@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide Atom feed" />
+    <meta charset="utf-8">
+    <title>kyle.mensing: <%= @item[:title] %></title>
+    <link rel="stylesheet" href="/stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200i,700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/3270dded95.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+  <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all">
+  <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
+  <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="Sunday Papers (Nanoc <%= Nanoc::VERSION %>)">
+
+    <!-- How your site's favicon gets loaded -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+
+    <!-- Opengraph properties, for rich embeds when sharing (https://ogp.me) -->
+    <meta property="og:title" content="<%= @item[:title] %>" />
+    <meta property="article:author" content="Kyle Mensing" />
+    <meta property="og:image:alt" content="learning in public and thinking out loud" />
+    <meta property="article:tag" content="blog" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="<%= url_for(item) %>" />
+    <% if item[:preview_image] %>
+      <meta property="og:image" content="<%= @config[:base_url] + '/' + item[:preview_image] %>" />
+    <% end %>
+
+    <meta property="article:published_time" content="<%= item[:created_at] %>" />
+</head>
+<body>
+<div class="wrapper">
+  <div class="box icon">
+    <i class="fas fa-carrot fa-flip-horizontal" id="icons"></i>
+
+    <!---<span>
+      <i class="random fas fa-carrot fa-flip-horizontal" id="icon-one"></i>
+      <i class="random fas fa-seedling" id="icon-two"></i>
+      <i class="random fas fa-lemon" id="icon-three"></i>
+    </span>-->
+  </div>
+<div class="sidebar"><h1 class="vertical-rl rotate-180">kyle.mensing</h1></div>
+ <div class="header1"><h3>learning
+   in public & thinking out loud</h3></div>
+  <div class="content">
+  <main>
+      <% if item[:non_comic_page] %>
+        <%= yield %>
+      <% else %>
+        <figure>
+          <%= content_for(@item, :comic) %>
+          <%= yield %>
+        </figure>
+
+
+        <nav class='comic-navigation'>
+          <ol>
+            <li>
+              <a <% if @config[:first_comic] && @config[:first_comic] != item %> href="<%= @config[:first_comic].identifier.without_ext %>" <% end %>>
+                <i class="fas fa-fast-backward"></i> First
+              </a>
+            </li>
+            <li>
+              <a <% if @item[:previous_comic] %> href="<%= @item[:previous_comic].identifier.without_ext %>" <% end %>>
+                <i class="fas fa-step-backward"></i></i> Previous
+              </a>
+            </li>
+            <li>
+              <a <% if @item[:next_comic] %> href="<%= @item[:next_comic].identifier.without_ext %>" <% end %>>
+                <i class="fas fa-step-forward"></i> Next
+              </a>
+            </li>
+            <li>
+              <a <% if @config[:last_comic] && @config[:last_comic] != item %> href="<%= @config[:last_comic].identifier.without_ext %>" <% end %>>
+                <i class="fas fa-fast-forward"></i> Last
+              </a>
+            </li>
+          </ol>
+        </nav>
+
+        <% if content_for(@item, :newspost) %>
+          <article>
+            <%= content_for(@item, :newspost) %>
+          </article>
+        <% end %>
+      <% end %>
+    </main>
+  </div>
+  <div class="sidebar2 mirror">
+    <a href="/"><i class="fas fa-home fa-lg fa-menu"></i></a><br>
+    <a href="/archive"><i class="fas fa-history fa-lg fa-menu"></i></a><br>
+    <a href="feed:<%= @config[:base_url] %>/atom.xml"><i class="fas fa-rss fa-lg fa-menu"></i></a><br>
+    <i class="fas fa-envelope fa-lg fa-menu"></i><br><br>
+    <i class="fas fa-seedling fa-menu"></i></div>
+   <div class="footer">
+   &copy; <%= Date.today.year %>
+      Kyle Mensing | <a class='repo-link' href="https://github.com/tcannonfodder/sunday-papers"><i class="fab fa-github"></i> Make your own</a>
+  </div>
+</div>
+</body>
+</html>
