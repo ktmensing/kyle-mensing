@@ -56,36 +56,26 @@
           <%= yield %>
         </figure>
 
-
-        <nav class='comic-navigation'>
-          <ol>
-            <li>
-              <a <% if @config[:first_comic] && @config[:first_comic] != item %> href="<%= @config[:first_comic].identifier.without_ext %>" <% end %>>
-                <i class="fas fa-fast-backward"></i> First
-              </a>
-            </li>
-            <li>
-              <a <% if @item[:previous_comic] %> href="<%= @item[:previous_comic].identifier.without_ext %>" <% end %>>
-                <i class="fas fa-step-backward"></i></i> Previous
-              </a>
-            </li>
-            <li>
-              <a <% if @item[:next_comic] %> href="<%= @item[:next_comic].identifier.without_ext %>" <% end %>>
-                <i class="fas fa-step-forward"></i> Next
-              </a>
-            </li>
-            <li>
-              <a <% if @config[:last_comic] && @config[:last_comic] != item %> href="<%= @config[:last_comic].identifier.without_ext %>" <% end %>>
-                <i class="fas fa-fast-forward"></i> Last
-              </a>
-            </li>
-          </ol>
-        </nav>
-
         <% if content_for(@item, :newspost) %>
           <article>
             <%= content_for(@item, :newspost) %>
           </article>
+            
+            <nav class='comic-navigation'>
+          <ol>
+            <li>
+              <a <% if @item[:previous_newspost] %> href="<%= @item[:previous_newspost].identifier.without_ext %>" <% end %>>
+                <i class="fas fa-step-backward"></i></i> Previous
+              </a>
+            </li>
+            <li>
+              <a <% if @item[:next_newspost] %> href="<%= @item[:next_newspost].identifier.without_ext %>" <% end %>>
+                <i class="fas fa-step-forward"></i> Next
+              </a>
+            </li>
+          </ol>
+        </nav>
+            
         <% end %>
       <% end %>
     </main>
