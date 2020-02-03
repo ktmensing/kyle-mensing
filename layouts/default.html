@@ -65,12 +65,12 @@
           <ol>
             <li>
               <a <% if @item[:previous_newspost] %> href="<%= @item[:previous_newspost].identifier.without_ext %>" <% end %>>
-                <i class="fas fa-chevron-circle-left fa-xl fa-menu"></i></i>
+                <i class="fas fa-chevron-circle-left fa-2x fa-prev"></i></i>
               </a>
             </li>
             <li>
               <a <% if @item[:next_newspost] %> href="<%= @item[:next_newspost].identifier.without_ext %>" <% end %>>
-                <i class="fas fa-chevron-circle-right fa-xl fa-menu"></i>
+                <i class="fas fa-chevron-circle-right fa-2x fa-next"></i>
               </a>
             </li>
           </ol>
