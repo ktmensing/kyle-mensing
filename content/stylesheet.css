@@ -1,5 +1,4 @@
- 
-.vertical-rl { 
+ .vertical-rl { 
   writing-mode: vertical-rl;
 }
 
@@ -132,9 +131,16 @@ p {
   display: inline-block;
 }
 
-.site-navigation li a,
+.site-navigation a,
 .comic-navigation li a{
   display: block;
+  color: #495057;
+}
+
+.site-navigation a:hover,
+.comic-navigation li a:hover{
+  display: block;
+  color: #ff922b;
 }
 
 .fa-next {
@@ -143,4 +149,10 @@ p {
 
 .fa-prev {
  margin: 2vw;
+}
+
+.comic-navigation a:not([href]) {
+    filter: grayscale(1);
+    opacity: .3;
+    cursor: default;
 }
