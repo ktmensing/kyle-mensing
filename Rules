@@ -40,3 +40,9 @@ compile '/**/*' do
 end
 
 layout '/**/*', :erb
+
+compile '/**/*.md' do
+  filter :kramdown
+  layout '/default.*'
+  write item.identifier.without_ext + '.html'
+end
