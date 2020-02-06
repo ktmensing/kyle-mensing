@@ -46,7 +46,164 @@
       padding: 10px;
     }
 
+.icon { .vertical-rl { 
+  writing-mode: vertical-rl;
+}
+
+.vertical-lr { 
+  writing-mode: vertical-lr;
+}
+
+.rotate-180 {
+  transform: rotate(-180deg);
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}
+
+.sidebar {
+        grid-area: sidebar;
+    }
+
+.sidebar2 {
+        grid-area: sidebar2;
+  text-align: center;
+    }
+
+    .content {
+        grid-area: content;
+        padding-left: 2.5%;
+        background-color: #fff;
+        font-size: 1.5em;
+    }
+
+    .header1 {
+        grid-area: header1;
+    }
+
+.header2 {
+        grid-area: header2;
+  margin: auto;
+    }
+
+    .footer {
+        grid-area: footer;
+      font-family: 'IBM Plex Mono', monospace;
+  font-weight: 200i;
+  font-style: italic;
+      padding: 10px;
+    }
+
 .icon {
+  grid-area: icon;
+  text-align: center;
+  padding-left: 15%;
+}
+
+
+    .wrapper {
+        display: grid;
+    grid-gap: 1px;
+        grid-template-columns: 7vw 72vw 13vw 7vw;
+        grid-template-areas:
+        "icon header1 header1 ..."
+        "sidebar content content sidebar2"
+        "....  footer  footer ...";
+        background-color: #f9f9f9;
+        color: #444;
+    }
+
+body {
+  background-color: #f9f9f9;
+}
+
+.box {
+  padding-top: 10px;
+  padding-right: 5px;
+  font-size: 150%;
+}
+
+h1 {
+  font-family: Arial Black, sans-serif;
+  color: #666666;
+  font-size: 3.3vw;
+  margin: auto;
+}
+
+h2 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 200i;
+  font-style: italic;
+  padding-left: 10px;
+  font-size: 80%;
+}
+
+p {
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 15px;
+}
+
+.fa-carrot {
+  vertical-align: sub;
+  color: #ff922b;
+}
+  
+.fa-menu {
+    padding-bottom: 20px;
+  margin: auto;
+}
+
+.mirror {
+  position: fixed;
+  bottom: 0;
+  right: 3vw;
+}
+
+.site-navigation ul,
+.comic-navigation ol{
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.site-navigation li,
+.comic-navigation li{
+  list-style: none;
+  display: inline-block;
+}
+
+.site-navigation a,
+.comic-navigation li a{
+  display: block;
+  color: #495057;
+}
+
+.site-navigation a:hover,
+.comic-navigation li a:hover{
+  display: block;
+  color: #ff922b;
+}
+
+.fa-next {
+ margin: 2vw;
+}
+
+.fa-prev {
+ margin: 2vw;
+}
+
+.comic-navigation a:not([href]) {
+    filter: grayscale(1);
+    opacity: .3;
+    cursor: default;
+}
   grid-area: icon;
   text-align: center;
   padding-left: 15%;
