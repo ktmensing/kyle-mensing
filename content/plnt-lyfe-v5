@@ -1,0 +1,20 @@
+---
+title: PLNT LYFE v5
+kind: article
+created_at: 2020-03-11
+preview_image:
+---
+
+
+<% content_for(:comic) do %>
+<% end %>
+
+<% content_for(:newspost) do %>
+  <h2>PLNT LYFE v5</h2>
+  <aside class='publish-date'><%= publish_time_tag %></aside>
+  <p>New issue of PLNT LYFE is out!</p>
+
+<p>February in running, pretty data visualizations about food, what I'm curious about (perpetual motion electric cars...kind of), and recipes for what I'm eating this week.</p>
+
+<p><a href="https://buttondown.email/kylemensing/archive/plnt-lyfe-v5-february-in-running/">Read it here.</a></p>
+<% end %>
