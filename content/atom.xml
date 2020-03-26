@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <!-- LABEL YOUR FEED HERE -->
-  <title>📰 Sunday Papers 🎨</title>
-  <subtitle>A Nanoc Skeleton for Webcomics</subtitle>
+  <title>Spiritual Soundsystem</title>
+  <subtitle>Positive vibrations for trying times.</subtitle>
   <author>
-    <name>Charlie Doe</name>
+    <name>PLNT LYFE</name>
     <uri><%= @config[:base_url] + '/' %></uri>
   </author>
   <icon>/favicon/favicon-32x32.jpg</icon>
@@ -12,14 +12,12 @@
   <rights>
     <!-- For your convenience! -->
     &copy; <%= Date.today.year %>
-    Add your trademark & other info here!
   </rights>
   <!-- END UPDATE BLOCK -->
 
-  <category term="comics" label="comics"/>
-  <category term="webcomics" label="webcomics"/>
+  <category term="music" label="music"/>
   <generator version="<%= Nanoc::VERSION %>">
-    Sunday Papers (Nanoc <%= Nanoc::VERSION %>)
+    Spiritual Soundsystem (Nanoc <%= Nanoc::VERSION %>)
   </generator>
 
   <link href="<%= feed_url %>" rel="self" />
