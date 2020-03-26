@@ -15,7 +15,8 @@
   </rights>
   <!-- END UPDATE BLOCK -->
 
-  <category term="music" label="music"/>
+  <category term="comics" label="comics"/>
+  <category term="webcomics" label="webcomics"/>
   <generator version="<%= Nanoc::VERSION %>">
     Sunday Papers (Nanoc <%= Nanoc::VERSION %>)
   </generator>
