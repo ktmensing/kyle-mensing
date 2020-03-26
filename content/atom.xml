@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <!-- LABEL YOUR FEED HERE -->
-  <title>Spiritual Soundsystem</title>
+  <title>Spiritual Sound System</title>
   <subtitle>Positive vibrations for trying times.</subtitle>
   <author>
     <name>PLNT LYFE</name>
@@ -17,7 +17,7 @@
 
   <category term="music" label="music"/>
   <generator version="<%= Nanoc::VERSION %>">
-    Spiritual Soundsystem (Nanoc <%= Nanoc::VERSION %>)
+    Spiritual Sound System (Nanoc <%= Nanoc::VERSION %>)
   </generator>
 
   <link href="<%= feed_url %>" rel="self" />
