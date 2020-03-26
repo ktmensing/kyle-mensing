@@ -17,7 +17,7 @@
 
   <category term="music" label="music"/>
   <generator version="<%= Nanoc::VERSION %>">
-    Spiritual Sound System (Nanoc <%= Nanoc::VERSION %>)
+    Sunday Papers (Nanoc <%= Nanoc::VERSION %>)
   </generator>
 
   <link href="<%= feed_url %>" rel="self" />
